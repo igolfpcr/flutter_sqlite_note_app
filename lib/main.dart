@@ -7,6 +7,8 @@ import 'dart:io';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -20,7 +22,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, this.title = ""}) : super(key: key);
+  const MyHomePage({Key? key, this.title = ""}) : super(key: key);
 
   final String title;
 
@@ -34,7 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
   TextEditingController messageController = TextEditingController();
 
   _MyHomePageState() {
-    this.loadRecentMessage();
+    loadRecentMessage();
   }
 
   void loadRecentMessage() async {
@@ -66,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
                         saveNewNote(message);
                       },
-                      child: Text('บันทึก'),
+                      child: const Text('บันทึก'),
                     ),
                   ],
                 ),
